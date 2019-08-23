@@ -1,0 +1,4 @@
+# Microservices and RabbitMQ
+
+## Microservices là gì
+In a microservice architecture (also called modular architecture) different modules are de-coupled from each other. These modules often offer various functionalities, forming a complete software application, via properly articulated operations and interfaces. Unlike a monolithic application, where all chunks of functionality are present within a single module, a microservice application divides different functionalities across different modules, to enhance maintainability and ease-ofuse. More and more organizations are going down the microservices road because it allows them to have a more agile approach to software development and maintenance. Microservices also make it easy for businesses to scale and deliver updated versions of software weekly, instead of yearly. 
