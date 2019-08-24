@@ -19,3 +19,77 @@ RabbitMQ là một phần mềm message queue được gọi là message broker 
 Một message có thể bao gồm bất kỳ thông tin. Ví dụ, nó có thể chứa thông tin về một quy trình / công việc nên bắt đầu trên một ứng dụng khác (có thể trên một máy chủ khác) hoặc đó cũng có thể chỉ là một tin nhắn văn bản đơn giản
 
 message broker lưu trữ các tin nhắn cho đến khi một ứng dụng nhận kết nối và đưa một tin nhắn ra khỏi hàng đợi. Các ứng dụng nhận sau đó xử lý thích hợp tin nhắn. Một nhà sản xuất có thể thêm tin nhắn vào hàng đợi mà không phải chờ xử lý chúng.
+
+### Ví dụ 
+Khi user nhập user info vào giao diện web, ứng dụng web đặt PDF-processing vào message (bao gồm cả thông tin về job). Sau đó message được đặt vào hàng chờ được định nghĩa bởi rabitmq. Kiến trúc cơ bản message queue khá đơn giản: Có 1 client aplications gọi là producers tạo ra các messages và gửi chúng đến messages broker 
+
+Các aplications khác gọi là consumer, kêt nối đến queue và subcribes messages từ broker và process các messages đó. Phần mềm tương tác với broker có thể là producer, consumer, hoặc cả 2. Messages được lưu vào queue cho đến khi consumer vào nhận nó
+
+Luồng
+
+![image](https://user-images.githubusercontent.com/45547213/63631802-4514f800-c656-11e9-8990-62cabdde2399.png)
+
+
+- Producer gửi message vào rabit mq
+- Trong rabitmq có exchange, exchange có nhiệm vụ phân loại các message vào queue phù hợp
+- message được đưa vào queue
+- Sau đó consumer đến lấy
+
+## RabitMQ và server concept
+- Producer: app gửi message
+- Consumer: app nhận message
+- queue: buffer nhận message
+- message: data được gửi đi từ producer đến consumer qua rabitmq
+- connection : TCP connection từ app của bạn đến rabitmq
+- exchange: nhận message từ producer rồi đẩy vào queue dựa theo nguyên tắc được định nghĩa bởi kiểu exchange 
+- binding: là cái link giữa queue và exchange
+- routing key: là cái exchange nhìn để biết message này phải gửi vào queue nào hay nói cách khác là cái địa chỉ nhà của 1 lá thư
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
